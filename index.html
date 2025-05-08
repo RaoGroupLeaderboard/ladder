@@ -2,18 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elo Leaderboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Elo Leaderboard</h1>
+
+  <section id="add-player">
+    <h2>Add Player</h2>
+    <input type="text" id="new-player" placeholder="Player Name" />
+    <button onclick="addPlayer()">Add</button>
+  </section>
+
+  <section id="match-input">
+    <h2>Record Match Result</h2>
+    <div>
+      <h3>Team A</h3>
+      <div id="team-a"></div>
+      <button onclick="addPlayerToTeam('A')">+ Add Player</button>
+    </div>
+    <div>
+      <h3>Team B</h3>
+      <div id="team-b"></div>
+      <button onclick="addPlayerToTeam('B')">+ Add Player</button>
+    </div>
+    <div>
+      <button onclick="recordMatch('A')">Team A Wins</button>
+      <button onclick="recordMatch('B')">Team B Wins</button>
+    </div>
+  </section>
+
+  <h2>Leaderboard</h2>
   <table id="leaderboard">
     <thead>
-      <tr>
-        <th>Player</th>
-        <th>Rating</th>
-      </tr>
+      <tr><th>Player</th><th>Rating</th></tr>
     </thead>
     <tbody></tbody>
   </table>
